@@ -40,7 +40,8 @@ export const updateTask = async (req, res) => {
     const task_id = req.params.id
 
     try {
-        await Task.findOneAndUpdate(task_id, req.body).then(res.json({"msg" : "task updated successfully"})).catch(err => res.json({ 'Error': err.message }))
+        await Task.findOneAndUpdate(task_id, req.body)
+        await Task.findById(task_id).then(result => res.status(200).json(result))
 
     } catch (err) {
         res.status(409).json({ 'Error': err.message })
