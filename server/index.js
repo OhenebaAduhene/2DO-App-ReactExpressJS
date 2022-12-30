@@ -15,7 +15,5 @@ mongoose.set('strictQuery', true)
 mongoose.connect(process.env.DB_URL).then(() => console.log("DB conneced")).catch(err => console.log(err))
 
 app.use('/tasks', router)
-app.use('/tasks/:id', router)
 
-
-app.listen(3000)
+app.listen(5000)

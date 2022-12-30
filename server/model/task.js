@@ -5,7 +5,7 @@ const TaskTodo = new Schema({
         type: String,
         required: true
     },
-    comment: String
+    content: String
 }, {timestamps: true})
 
 const Task = mongoose.model('Task', TaskTodo)
