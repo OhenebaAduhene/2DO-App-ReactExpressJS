@@ -50,9 +50,8 @@ function App() {
   }
   const removeTodo = async (id) => {
     await deleteTodo(id);
-    const todosCopy = [...todos];
-    todosCopy.filter(todo => todo._id !== id);
-    setTodos(todosCopy);
+    const result = await readTodos();
+      setTodos(result)
   }
   return (
     <div className="container">
